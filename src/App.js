@@ -9,15 +9,11 @@ import "./App.css";
 
 const App = () => {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Switch>
-          <Route path="/" component={HomePage} />
-          <Route exact path="/signin" component={SignIn} />
-        </Switch>
-      </div>
-    </Router>
+    <div className="App">
+      <Header />
+      <HomePage />
+      <SignIn />
+    </div>
   );
 };
 

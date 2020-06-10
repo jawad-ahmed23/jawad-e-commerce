@@ -1,0 +1,20 @@
+.search-bar {
+  position: relative;
+  input {
+    width: 600px;
+    border: 1px solid #dcdacb;
+    border-radius: 100px;
+    font-size: 16px;
+    padding: 13px 20px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .search-icon {
+    position: absolute;
+    top: 7px;
+    right: 15px;
+  }
+}

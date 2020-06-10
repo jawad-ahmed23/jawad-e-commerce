@@ -8,10 +8,13 @@ import Cart from "../../components/cart/cart.compoent";
 
 import "./cart-icon.styles.scss";
 
-const CartIconComponent = ({ cartHidden, toggleCartHidden }) => {
+const CartIconComponent = ({ cartHidden, toggleCartHidden, cartItems }) => {
   return (
     <div className="cart-icon-container">
-      <span className="items-count">0</span>
+      {cartItems.length ? (
+        <span className="items-count">{cartItems.length}</span>
+      ) : null}
+
       <CartIcon className="cart-icon" onClick={toggleCartHidden} />
       {cartHidden ? <Cart /> : null}
     </div>
@@ -20,6 +23,7 @@ const CartIconComponent = ({ cartHidden, toggleCartHidden }) => {
 
 const mapStateToProps = ({ cart }) => ({
   cartHidden: cart.hidden,
+  cartItems: cart.cartItems,
 });
 
 const mapDispatchToProps = (dispatch) => ({

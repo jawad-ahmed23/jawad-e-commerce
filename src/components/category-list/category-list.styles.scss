@@ -1,0 +1,24 @@
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 300px;
+  border: 1px solid #d9d9d9;
+  position: absolute;
+  top: 60px;
+  left: 160px;
+  background-color: #fff;
+
+  .categories-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 20px;
+    line-height: 30px;
+    .category-name {
+      font-size: 18px;
+      color: #333;
+      cursor: pointer;
+    }
+  }
+}

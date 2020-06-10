@@ -1,15 +1,15 @@
-.sign-in-container {
+.sign-up-container {
   margin: 40px auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 550px;
   width: 400px;
   border: 1px solid #d9d9d9;
   border-radius: 3px;
   flex-direction: column;
 
-  .signin-form {
+  .signup-form {
     display: flex;
     flex-direction: column;
 
@@ -22,7 +22,6 @@
       }
     }
   }
-
   .social-icon {
     position: absolute;
     top: 5px;

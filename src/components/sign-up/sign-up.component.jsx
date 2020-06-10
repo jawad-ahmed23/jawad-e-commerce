@@ -6,14 +6,16 @@ import { FcGoogle } from "react-icons/fc";
 import FormInput from "../form-input/form-input.compoent";
 import CustomButton from "../custom-button/custom-button.component";
 
-import "./signin.styles.scss";
+import "./sign-up.styles.scss";
 
-class SignIn extends React.Component {
+class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      displayName: "",
       email: "",
       password: "",
+      conformPassword: "",
     };
   }
 
@@ -26,16 +28,18 @@ class SignIn extends React.Component {
     e.preventDefault();
 
     this.setState({
+      displayName: "",
       email: "",
       password: "",
+      conformPassword: "",
     });
   };
 
   render() {
-    const { email, password } = this.state;
+    const { email, password, displayName, conformPassword } = this.state;
     const { history } = this.props;
     return (
-      <div className="sign-in-container">
+      <div className="sign-up-container">
         <CustomButton isGoogleSignIn>
           <FcGoogle size="30px" className="social-icon" />
           signin with google
@@ -44,7 +48,14 @@ class SignIn extends React.Component {
           <AiFillFacebook size="30px" className="social-icon" />
           signin with facebook
         </CustomButton>
-        <form className="signin-form" onSubmit={this.handleSubmit}>
+        <form className="signup-form" onSubmit={this.handleSubmit}>
+          <FormInput
+            type="text"
+            name="displayName"
+            value={displayName}
+            onChange={this.handleChange}
+            label="Display Name"
+          />
           <FormInput
             type="text"
             name="email"
@@ -59,20 +70,27 @@ class SignIn extends React.Component {
             onChange={this.handleChange}
             label="Password"
           />
-          <CustomButton type="submit">signin</CustomButton>
+          <FormInput
+            type="password"
+            name="conformPassword"
+            value={conformPassword}
+            onChange={this.handleChange}
+            label="Corfrom Password"
+          />
+          <CustomButton type="submit">signup</CustomButton>
           <span
             style={{ textAlign: "center", fontSize: "14px", marginTop: "5px" }}
           >
-            Don't have an acount?
+            already have an acount?
             <span
-              onClick={() => history.push("./signup")}
+              onClick={() => history.push("/signin")}
               style={{
                 color: "blue",
                 textDecoration: "underline",
                 cursor: "pointer",
               }}
             >
-              signup
+              signin
             </span>
           </span>
         </form>
@@ -81,4 +99,4 @@ class SignIn extends React.Component {
   }
 }
 
-export default withRouter(SignIn);
+export default withRouter(SignUp);

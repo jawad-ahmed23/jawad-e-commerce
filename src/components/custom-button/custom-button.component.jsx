@@ -6,6 +6,7 @@ const CustomButton = ({
   children,
   isGoogleSignIn,
   isFacebookSignIn,
+  isCartButton,
   ...otherProps
 }) => {
   return (
@@ -13,7 +14,7 @@ const CustomButton = ({
       {...otherProps}
       className={`${isFacebookSignIn ? "facebook-sign-in" : ""} ${
         isGoogleSignIn ? "google-sign-in" : ""
-      } custom-button`}
+      } ${isCartButton ? "cart-button" : ""} custom-button`}
     >
       {children}
     </button>

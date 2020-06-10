@@ -5,6 +5,8 @@
   font-size: 18px;
   border-radius: 3px;
   text-transform: uppercase;
+  background-color: #333333;
+  color: #fff;
 }
 .google-sign-in {
   width: 290px;
@@ -31,4 +33,14 @@
   cursor: pointer;
   position: relative;
   padding-left: 40px;
+}
+.cart-button {
+  background-color: #f57224;
+  color: #fff;
+  border-radius: 3px;
+  margin: auto auto 30px auto;
+  width: 200px;
+  &:hover {
+    background-color: #c0581c;
+  }
 }

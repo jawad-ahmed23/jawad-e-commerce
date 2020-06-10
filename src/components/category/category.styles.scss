@@ -1,0 +1,11 @@
+.categories-button-container {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .categories-button {
+    font-size: 18px;
+  }
+}
